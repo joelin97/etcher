@@ -23,7 +23,6 @@ const Color = require('color')
 const middleEllipsis = require('./../../utils/middle-ellipsis')
 
 const styled = require('styled-components').default
-<<<<<<< HEAD
 const {Button, Box, Txt, Provider} = require('rendition')
 
 const shared = require('/./../../../../../lib/shared/units')
@@ -32,6 +31,7 @@ const { colors, consts } = require('./../../theme')
 const StyledButton = styled(Button)`
   width: 100%;
   max-width: ${consts.btnMinWidth};
+<<<<<<< HEAD
 =======
 const rendition = require('rendition')
 
@@ -43,12 +43,13 @@ const StyledButton = styled(rendition.Button)`
   width: 100%;
   max-width: ${consts.consts.btnMinWidth};
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
   margin: auto;
 
   overflow: hidden;
 `
 
-<<<<<<< HEAD
 const StyledFooter = styled(Txt.p).attrs({
   className: 'step-footer'
 })``
@@ -74,6 +75,7 @@ const ChangeButton = styled(Button).attrs({
 })``
 
 const StyledText = styled(Txt).attrs({
+<<<<<<< HEAD
 =======
 const StyledFooter = styled(rendition.Txt.p).attrs({
   className: 'step-footer'
@@ -109,6 +111,8 @@ const ChangeButton = styled(rendition.Button).attrs({
 
 const StyledText = styled(rendition.Txt).attrs({
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
   className: 'step-image step-size'
 })``
 
@@ -126,21 +130,25 @@ class SelectImageButton extends React.Component {
   static getDerivedStateFromProps (props, state) {
     state.chosenImage = middleEllipsis(props.getImageName || props.getImageBasename , 20)
     state.imageSize = shared.bytesToClosestUnit(props.getImageSize)
-<<<<<<< HEAD
     return state
+<<<<<<< HEAD
 =======
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
   }
 
 
   render () {
     if (this.props.hasImage){
       return (
-<<<<<<< HEAD
         <Provider>
+<<<<<<< HEAD
 =======
         <rendition.Provider>
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
           <StyledBox>
             <ImageNameButton
               plaintext
@@ -163,20 +171,24 @@ class SelectImageButton extends React.Component {
               </ChangeButton>
             }
           </StyledBox>
-<<<<<<< HEAD
         </Provider>
+<<<<<<< HEAD
 =======
         </rendition.Provider>
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
       )
     }
     else {
       return (
-<<<<<<< HEAD
         <Provider>
+<<<<<<< HEAD
 =======
         <rendition.Provider>
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
           <StyledBox>
             <StyledButton
               primary
@@ -193,11 +205,13 @@ class SelectImageButton extends React.Component {
               </StyledFooterUnderline>
             </StyledFooter>
           </StyledBox>
-<<<<<<< HEAD
         </Provider>
+<<<<<<< HEAD
 =======
         </rendition.Provider>
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
       )
     }
   }
@@ -207,20 +221,24 @@ SelectImageButton.propTypes = {
   openImageSelector: propTypes.func,
   mainSupportedExtensions: propTypes.array,
   extraSupportedExtensions: propTypes.array,
-<<<<<<< HEAD
   hasImage: propTypes.bool,
+<<<<<<< HEAD
 =======
   hasImage: propTypes.boolean,
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
   showSelectedImageDetails: propTypes.func,
   getImageName: propTypes.string,
   getImageBasename: propTypes.string,
   reselectImage: propTypes.func,
-<<<<<<< HEAD
   flashing: propTypes.bool,
+<<<<<<< HEAD
 =======
   flashing: propTypes.boolean,
 >>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
+=======
+>>>>>>> 54ccfa9c... fix pr
   getImageSize: propTypes.number,
 }
 
