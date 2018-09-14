@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 'use strict'
+
+'use strict'
 
 const React = require('react')
 const ReactDOM = require('react-dom')
@@ -23,46 +24,12 @@ const Color = require('color')
 const middleEllipsis = require('./../../utils/middle-ellipsis')
 
 const styled = require('styled-components').default
-const {Button, Box, Txt, Provider} = require('rendition')
+const { Provider, Button } = require('rendition')
 
 const shared = require('/./../../../../../lib/shared/units')
 const { colors, consts } = require('./../../theme')
-
-const StyledButton = styled(Button)`
-  width: 100%;
-  max-width: ${consts.btnMinWidth};
-  margin: auto;
-
-  overflow: hidden;
-`
-
-const StyledFooter = styled(Txt.p).attrs({
-  className: 'step-footer'
-})``
-
-const StyledFooterUnderline = styled(Txt.span).attrs({
-  className: 'step-footer-underline'
-})``
-
-const StyledBox = styled(Box).attrs({
-  className: 'step-selection-text'
-})``
-
-const ImageNameButton = styled(Button).attrs({
-  className: 'step-image step-name'
-})`
-  &:hover, &:focus, &:active{
-    color: ${colors.primary.foreground};
-  }
-`
-
-const ChangeButton = styled(Button).attrs({
-  className: 'button button-link step-footer'
-})``
-
-const StyledText = styled(Txt).attrs({
-  className: 'step-image step-size'
-})``
+const { StepButton, StepNameButton, StepSelection,
+  Footer, FooterUnderline, SizeText } = require('./../../styled-components')
 
 class SelectImageButton extends React.Component {
 
@@ -86,50 +53,50 @@ class SelectImageButton extends React.Component {
     if (this.props.hasImage){
       return (
         <Provider>
-          <StyledBox>
-            <ImageNameButton
+          <StepSelection>
+            <StepNameButton
               plaintext
               onClick={() => this.props.showSelectedImageDetails()}
               tooltip={this.props.getImageBasename}
             >
               {this.state.chosenImage}
-            </ImageNameButton>
-            <StyledText>
+            </StepNameButton>
+            <SizeText>
               {this.state.imageSize}
-            </StyledText>
+            </SizeText>
             { this.props.flashing ?
               null
               :
-              <ChangeButton
+              <Button className={'button button-link step-footer'}
                 plaintext
                 onClick={() => this.props.reselectImage()}
               >
                 Change
-              </ChangeButton>
+              </Button>
             }
-          </StyledBox>
+          </StepSelection>
         </Provider>
       )
     }
     else {
       return (
         <Provider>
-          <StyledBox>
-            <StyledButton
+          <StepSelection>
+            <StepButton
               primary
               onClick={() => this.props.openImageSelector()}
             >
               Select image
-            </StyledButton>
-            <StyledFooter>
+            </StepButton>
+            <Footer>
               { ::this.props.mainSupportedExtensions.join(', ') }, and
-              <StyledFooterUnderline
+              <FooterUnderline
                 tooltip={ ::this.props.extraSupportedExtensions.join(', ') }
               >
                 {' '}others
-              </StyledFooterUnderline>
-            </StyledFooter>
-          </StyledBox>
+              </FooterUnderline>
+            </Footer>
+          </StepSelection>
         </Provider>
       )
     }
