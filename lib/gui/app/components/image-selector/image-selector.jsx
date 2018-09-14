@@ -31,20 +31,6 @@ const { colors, consts } = require('./../../theme')
 const StyledButton = styled(Button)`
   width: 100%;
   max-width: ${consts.btnMinWidth};
-<<<<<<< HEAD
-=======
-const rendition = require('rendition')
-
-const shared = require('/./../../../../../lib/shared/units')
-const consts = require('./../../scss/main')
-const theme = require('./../../scss/modules/theme')
-
-const StyledButton = styled(rendition.Button)`
-  width: 100%;
-  max-width: ${consts.consts.btnMinWidth};
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
   margin: auto;
 
   overflow: hidden;
@@ -75,44 +61,6 @@ const ChangeButton = styled(Button).attrs({
 })``
 
 const StyledText = styled(Txt).attrs({
-<<<<<<< HEAD
-=======
-const StyledFooter = styled(rendition.Txt.p).attrs({
-  className: 'step-footer'
-})``
-
-const StyledFooterUnderline = styled(rendition.Txt.span).attrs({
-  className: 'step-footer-underline'
-})``
-
-const StyledBox = styled(rendition.Box).attrs({
-  className: 'step-selection-text'
-})``
-
-const ImageNameButton = styled(rendition.Button).attrs({
-  className: 'step-image step-name'
-})`
-  &:hover {
-    color: ${theme.colors.primary.foreground};
-  }
-
-  &:focus {
-    color: ${theme.colors.primary.foreground};
-  }
-
-  &:active {
-    color: ${theme.colors.primary.foreground};
-  }
-`
-
-const ChangeButton = styled(rendition.Button).attrs({
-  className: 'button button-link step-footer'
-})``
-
-const StyledText = styled(rendition.Txt).attrs({
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
   className: 'step-image step-size'
 })``
 
@@ -131,11 +79,6 @@ class SelectImageButton extends React.Component {
     state.chosenImage = middleEllipsis(props.getImageName || props.getImageBasename , 20)
     state.imageSize = shared.bytesToClosestUnit(props.getImageSize)
     return state
-<<<<<<< HEAD
-=======
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
   }
 
 
@@ -143,12 +86,6 @@ class SelectImageButton extends React.Component {
     if (this.props.hasImage){
       return (
         <Provider>
-<<<<<<< HEAD
-=======
-        <rendition.Provider>
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
           <StyledBox>
             <ImageNameButton
               plaintext
@@ -172,23 +109,11 @@ class SelectImageButton extends React.Component {
             }
           </StyledBox>
         </Provider>
-<<<<<<< HEAD
-=======
-        </rendition.Provider>
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
       )
     }
     else {
       return (
         <Provider>
-<<<<<<< HEAD
-=======
-        <rendition.Provider>
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
           <StyledBox>
             <StyledButton
               primary
@@ -206,12 +131,6 @@ class SelectImageButton extends React.Component {
             </StyledFooter>
           </StyledBox>
         </Provider>
-<<<<<<< HEAD
-=======
-        </rendition.Provider>
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
       )
     }
   }
@@ -222,23 +141,11 @@ SelectImageButton.propTypes = {
   mainSupportedExtensions: propTypes.array,
   extraSupportedExtensions: propTypes.array,
   hasImage: propTypes.bool,
-<<<<<<< HEAD
-=======
-  hasImage: propTypes.boolean,
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
   showSelectedImageDetails: propTypes.func,
   getImageName: propTypes.string,
   getImageBasename: propTypes.string,
   reselectImage: propTypes.func,
   flashing: propTypes.bool,
-<<<<<<< HEAD
-=======
-  flashing: propTypes.boolean,
->>>>>>> a039bde1... refactor(GUI): Convert Select Image button to Rendition
-=======
->>>>>>> 54ccfa9c... fix pr
   getImageSize: propTypes.number,
 }
 
